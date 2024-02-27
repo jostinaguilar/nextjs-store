@@ -1,3 +1,4 @@
+import { dmSans } from '@/ui/fonts';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body className={`${dmSans.className} antialiased`}>{children}</body>
     </html>
   );
 }
