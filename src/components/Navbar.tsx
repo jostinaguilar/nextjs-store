@@ -1,16 +1,20 @@
-import { CartIcon, MenuIcon, SearchIcon, UserIcon } from './Icons';
+'use client';
+
+import { useMenuStore } from '@/store/useMenuStore';
+import { CartIcon, MenuIcon, SearchIcon, UserIcon } from '../ui/Icons';
 import { Navigation } from './Navigation';
 
 export function Navbar() {
+  const openMenu = useMenuStore((state) => state.openMenu);
   return (
     <header>
       <div className="bg-primary">
         <ul className="w-full px-5 py-6 flex flex-row flex-wrap items-center justify-between gap-4 max-w-screen-lg mx-auto lg:flex-nowrap lg:gap-10">
           <li className="order-1 text-white flex flex-row gap-2">
-            <span className="lg:hidden">
+            <button type="button" onClick={openMenu} className="lg:hidden">
               <span className="sr-only">Menu</span>
               <MenuIcon />
-            </span>
+            </button>
             <h1 className="text-white text-2xl font-black text-nowrap">
               Tech <span className="font-medium">Store</span>
             </h1>
