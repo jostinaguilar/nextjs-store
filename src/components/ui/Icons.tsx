@@ -235,3 +235,31 @@ export function CloseIcon() {
     </svg>
   );
 }
+
+export function ChevronRightIcon() {
+  return (
+    <svg className="w-8 h-8" aria-hidden="true" fill="none" viewBox="0 0 24 24">
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m10 16 4-4-4-4"
+      />
+    </svg>
+  );
+}
+
+export function ChevronLeftIcon() {
+  return (
+    <svg className="w-8 h-8" aria-hidden="true" fill="none" viewBox="0 0 24 24">
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m14 8-4 4 4 4"
+      />
+    </svg>
+  );
+}
