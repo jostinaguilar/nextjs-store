@@ -1,5 +1,3 @@
-import { useMenuStore } from '@/store/useMenuStore';
-import clsx from 'clsx';
 import {
   CloseIcon,
   CompassIcon,
@@ -9,7 +7,9 @@ import {
   LaptopIcon,
   MouseIcon,
   TagIcon,
-} from '../ui/Icons';
+} from '@/components/ui/Icons';
+import { useMenuStore } from '@/store/useMenuStore';
+import clsx from 'clsx';
 
 export function Navigation() {
   const menu = useMenuStore((state) => state.menu);

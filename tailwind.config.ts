@@ -5,7 +5,6 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/ui/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -14,6 +13,9 @@ const config: Config = {
         secondary: '#006CE1',
         'primary-medium': '#1E1E1E',
         'gray-e': '#9F9F9F',
+      },
+      flex: {
+        '0': '0 0 100%',
       },
     },
   },

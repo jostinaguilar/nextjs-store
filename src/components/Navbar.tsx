@@ -1,7 +1,12 @@
 'use client';
 
+import {
+  CartIcon,
+  MenuIcon,
+  SearchIcon,
+  UserIcon,
+} from '@/components/ui/Icons';
 import { useMenuStore } from '@/store/useMenuStore';
-import { CartIcon, MenuIcon, SearchIcon, UserIcon } from '../ui/Icons';
 import { Navigation } from './Navigation';
 
 export function Navbar() {

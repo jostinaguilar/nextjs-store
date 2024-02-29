@@ -1,4 +1,4 @@
-import { dmSans } from '@/ui/fonts';
+import { dmSans } from '@/components/ui/fonts';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
