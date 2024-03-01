@@ -1,5 +1,7 @@
 'use client';
 
+import { SlidesImgs } from '@/lib/slidesimg';
+import { SlideImgType } from '@/lib/types';
 import clsx from 'clsx';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -27,27 +29,33 @@ export function SliderHome() {
   return (
     <div className="overflow-hidden lg:rounded-md relative" ref={emblaRef}>
       <div className="flex">
-        <div className="flex-0 min-w-0 bg-gray-300 h-80 lg:rounded-md text-center">
-          Slide 1
-        </div>
-        <div className="flex-0 min-w-0 bg-gray-300 h-80 lg:rounded-md text-center">
-          Slide 2
-        </div>
-        <div className="flex-0 min-w-0 bg-gray-300 h-80 lg:rounded-md text-center">
-          Slide 3
-        </div>
+        {SlidesImgs.map((img: SlideImgType) => (
+          <div
+            key={img.id}
+            className="flex-0 min-w-0 h-auto lg:rounded-md text-center"
+          >
+            <picture className="w-full h-full object-cover">
+              <source
+                type="image/webp"
+                media="(min-width: 768px)"
+                srcSet={img.srcSet}
+              />
+              <img loading="lazy" src={img.src} alt={img.name} />
+            </picture>
+          </div>
+        ))}
       </div>
       <button
         type="button"
         onClick={scrollPrev}
-        className="bg-primary p-1 rounded-full text-white top-1/2 -translate-y-1/2 left-2 absolute"
+        className="bg-primary lg:p-1 rounded-full text-white top-1/2 -translate-y-1/2 left-2 absolute"
       >
         <ChevronLeftIcon />
       </button>
       <button
         type="button"
         onClick={scrollNext}
-        className="bg-primary p-1 rounded-full text-white top-1/2 -translate-y-1/2 right-2 absolute"
+        className="bg-primary lg:p-1 rounded-full text-white top-1/2 -translate-y-1/2 right-2 absolute"
       >
         <ChevronRightIcon />
       </button>
@@ -58,8 +66,9 @@ export function SliderHome() {
             onClick={() => {
               onDotButtonClick(index);
             }}
-            className={clsx('w-3 h-3 rounded-full bg-gray-600', {
-              'bg-blue-600': index === selectedIndex,
+            className={clsx('w-2 h-2 lg:w-3 lg:h-3 rounded-full', {
+              'bg-secondary': index === selectedIndex,
+              'bg-gray-300': index !== selectedIndex,
             })}
           />
         ))}

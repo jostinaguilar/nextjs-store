@@ -34,7 +34,9 @@ export function useDotButton(emblaApi: EmblaCarouselType | undefined) {
   return { selectedIndex, scrollSnaps, onDotButtonClick };
 }
 
-export function DotButton(props) {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {}
+
+export function DotButton(props: Props) {
   const { children, ...restProps } = props;
 
   return (
